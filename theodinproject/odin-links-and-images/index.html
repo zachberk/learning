@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Links and Images</title>
+    </head>
+    <!-- Notes on file structure and naming: 
+        ~ Best practice is to use all lowercase and no spaces when naming files 
+        ~ make directories for css and js (javascript) 
+    -->
+    <body>
+        <h1>Homepage</h1>
+
+        <h2>Absolute link:</h2>
+        <ul>
+            <li>Format: protocol://domain/path</li>
+            <!-- for "rel" attribute, noreferrer performs same function as noopener - so can just use noreferrer -->
+        <!-- Good practice is to include "rel" attribute with noreferrer after including either an absolute or relative link -->
+            <li><a href="https://www.theodinproject.com/about" target="_blank" rel="noopener noreferrer">The Odin Project</a></li>
+        </ul>
+        
+        <h2>Relative link:</h2>
+        <ul>
+            <li><a href="./pages/about.html" target="_blank" rel="noreferrer">About</a></li>
+        </ul>
+        
+        <h2>Image of Ronald's girl:</h2>
+        <img src="./images/ronaldgf.jpg" alt="The girl Ronald started chatting with after 2 days of using Hinge..." height="310" width="310">
+    </body>
+</html>
