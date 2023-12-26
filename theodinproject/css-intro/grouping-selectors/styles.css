@@ -1,0 +1,20 @@
+/* styles.css for grouping selectors exercise */
+
+.first {
+    background-color: black;
+    color: white;
+}
+
+.second {
+    background-color: yellow;
+    outline: 2px solid black; 
+}
+
+.first, .second {
+    font-size: 28px;
+    font-family: "Helvetica", "Times New Roman", sans-serif;
+}
+
+span {
+    padding: 4px;
+}
