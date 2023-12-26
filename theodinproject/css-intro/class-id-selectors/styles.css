@@ -2,7 +2,7 @@
 
 .odd {
     background-color: rgb(255, 155, 155);
-    font-family: "Verdana", "DejaVu Sans", sans-serif;
+    font-family: Verdana, "DejaVu Sans", sans-serif;
 }
 
 .odd.cool {
@@ -16,6 +16,5 @@
 
 #green {
     font-weight: bold;
-    font-size: 24px;
     background-color: rgb(40, 255, 51)
 }
