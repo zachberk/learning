@@ -1,0 +1,61 @@
+Basic syntax:
+    1. Selector followed by a semi-colon separated list of declarations
+    2. declarations are made up of a property-value pair
+
+    e.g. * {
+        font-weight: 700;
+    } where * is the "universal selector" and font-weight: 700; is the property-value pair
+
+Types of selectors:
+    - universal selector: "*"
+    - type selectors: e.g. "div"
+    - class selectors: e.g. ".alert-text" where class is an attribute placed on an HTML element (e.g. <div class="alert-text">...</div>)
+        > use period in front of class name for proper syntax
+        > should use hyphens for multi-worded names; spaces separate class names and allow you to place multiple classes on one element
+    - ID selectors: e.g. "#title"
+        > use # in front of ID name for proper syntax
+        > same as class selectors but an element can only have 1 ID placed on it unlike classes
+        > use sparingly, if at all
+    - grouping selectors: separate selectors by commas to place common style declarations on all of them at once
+    - chaining selectors: chain selectors without separation to pick specific elements that may have multiple class/attribute selectors
+        > generally cannot chain two type selectors together -> an element is only one type of element and there are no unique symbols to separate them
+    - descendant combinator: will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc.) that matches the previous selector
+        > represented by a single space between selectors
+
+Properties:
+    - color
+        > uses HEX (e.g. color: #1100ff;), color: RGB (e.g. rgb(100, 0, 127);), and HSL (e.g. color: hsl(15, 82%, 56%);) values
+        > possible color values: https://www.w3schools.com/cssref/css_colors_legal.php
+    - background-color
+    - font-family: use a list of values as backup e.g. font-family: "Times New Roman", serif;
+        > "font family name" in quotes e.g. "Times New Roman"
+        > "generic family name" has no quotes e.g. serif
+    - font-size: value is e.g. 22px
+    - font-weight
+        > value is a keyword (e.g. bold) or a number between 1 and 1000 (700 = bold)
+    - text-align
+        > value is a keyword e.g. center
+    - height and width
+        > use for type img elements; best practice to include both properties even when not intending to change either of their proportions from their original ones because it will reserve space for the images as they load, preventing drastic changes to web page as they load
+        > set either property to auto while the other changes for both properties to scale proportionally
+
+Adding CSS to HTML:
+    - External CSS: inside the head tag -> <link rel="stylesheet" href="styles.css">
+        > href attribute is the location of CSS file, either an absolute URL or a URL relative to the location of the HTML file
+        > rel attribute specifies relationship between the HTML file and the linked file
+        > benefit: keeps CSS separate, handy when CSS is lengthy
+    - Internal CSS: included inside opening and closing <style> tag within head tags of HTML
+        > useful for adding unique styles to a single page of a website
+    - Inline CSS: add styles directly to HTML elements (not generally recommended)
+        > e.g.inside body tags, <div style="color: white;">...</div>
+        > can become messy with many declarations, will override the other two methods, adds a unique style for a single element only
+
+The Cascade:
+    - Higher specificity declarations take precedence over less specific ones
+    - Inline styles > ID selectors > class selectors > type selectors
+     > the universal selector, and combinator relationship selectors have NO specificity value (all other selectors with specificity take precedence over these)
+    - specificity is taken into account only when an element has multiple, conflicting declarations targeting it
+    - when there is no declaration with a selector of higher specificity, a rule with greater number of selectors of the same type will take precedence over another rule with fewer selectors of the same type
+    - inheritance: refers to certain CSS properties that, when applied, to an element, are inherited bty that element's descendants even if we don't explicitly write a rule for those descendants
+        > rules that specifically target those descendants will override the inherited declarations
+    - if every factor has been taken into account (specificity, # of selectors, inheritance) and declarations are still conflicting, then the rule declared LAST takes precedence
