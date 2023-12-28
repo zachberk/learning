@@ -1,0 +1,92 @@
+#References:
+- https://www.youtube.com/watch?v=rIO5326FgPE
+- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
+- https://css-tricks.com/almanac/properties/m/margin/
+
+
+# Essentially every element in CSS has a box around it
+
+# Ways to manipulate size of elements according to box model:
+    - padding: space between border of a box and content of that same box
+        > to change amount of background space inside an element box outside of actual content box
+        > includes background color of element
+    - margin: space between borders of a box and borders of adjacent boxes
+        > to separate different elements from each other
+        > margin collapses between two elements (i.e., when two adjacent elements have specified margin values, the largest of the two will be used and there will be that amount of space between the two elements)
+        > does NOT include background color of element
+    - border: space between margin and the padding
+
+# In inspector, element height and width dimensions exclude margin
+    - IMPORTANT & commonly-used property: to make height and width properties include/account for padding and border properties, use the 'box-sizing' property with a value of 'border-box'
+        > height/width of content box becomes the difference between the height/width value and 2*padding + 2*border
+
+# Types of boxes: determines how box behaves in terms of page flow and in relation to other boxes
+# boxes have an outer display type and an inner display type
+
+# Outer display type:
+    - block (display: block;):
+        > the box will break onto a new line
+        > width and height properties are respected
+        > padding, margin, and border sill cause other elements to be pushed away from the box
+        > if width is NOT specified, box will extend in the inline direction to fill space available in its container
+        > some HTML elements like <h1> and <p> use block as their outer display type by default
+    - inline (display: inline;): 
+        > the box will not break onto a new line
+        > width and height properties will NOT apply
+        > top and bottom padding, margins, and borders will apply BUT WILL NOT cause other inline boxes to move away from the box
+        > left and right padding, margins, and borders will apply AND WILL cause other inline boxes to move away from the box
+        > some HTML elements such as <a>, <span>, <em>, and <strong> use inline as their outer display by default
+    - inline-block: 
+        > width and height properties are respected
+        > padding, margin, and border will cause other elements to be pushed away from the box
+        > does NOT break onto a new line
+    - flex: to be studied later on
+
+# Inner display type: dictates how elements inside that box are laid out
+    - block and inline layout, and normal flow (how elements behave without any CSS changes) by default
+    - can change inner display type to flex -> display: flex; (https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+
+# Parts of a box:
+    - content box: The area where your content is displayed; size it using properties like inline-size and block-size or width and height (equivalent to each other).
+    - padding box: The padding sits around the content as white space; size it using padding and related properties.
+    - border box: The border box wraps the content and any padding; size it using border and related properties.
+    - margin box: The margin is the outermost layer, wrapping the content, padding, and border as whitespace between this box and other elements; size it using margin and related properties.
+
+# Margin properties:
+    - margin: takes up to four values, can input any number and the empty parameters will be auto-filled based on the filled parameters
+        > value can also be set to 'auto' -> sets the specified margin to 0 or else to whatever is the available space inside the parent element
+            * 'auto' is useful only for horizontal centering and NOT for vertical centering
+        > negative margins subtract from positive margin
+    - margin-top
+    - margin-right
+    - margin-bottom
+    - margin-left
+
+# Margin collapsing:
+    - Two positive margins will combine to become one margin. Its size will be equal to the largest individual margin.
+    - Two negative margins will collapse and the smallest (furthest from zero) value will be used.
+    - If one margin is negative, its value will be subtracted from the total.
+    * Only happens on vertical margins, NOT horizontal margins
+
+# Border properties:
+    - border
+    - to set the properties of each side individually:
+        > border-top
+        > border-right
+        > border-bottom
+        > border-left
+    - to set the width, style, or color of all sides:
+        > border-width
+        > border-style
+        > border-color
+    - to set the width, style, or color of a single side:
+        > border-x-width
+        > border-x-style
+        > border-x-color
+
+# Padding properties:
+    - padding
+    - padding-top
+    - padding-right
+    - padding-bottom
+    - padding-left
