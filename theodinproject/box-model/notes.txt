@@ -35,8 +35,9 @@
         > width and height properties will NOT apply
         > top and bottom padding, margins, and borders will apply BUT WILL NOT cause other inline boxes to move away from the box
         > left and right padding, margins, and borders will apply AND WILL cause other inline boxes to move away from the box
-        > some HTML elements such as <a>, <span>, <em>, and <strong> use inline as their outer display by default
-    - inline-block: 
+        > some HTML elements such as <a>, <span>, <em>, and <strong> use inline as their outer display by default --> often used to mark up a a part of a text or document
+        > an inline element CANNOT contain a block-level element
+    - inline-block (display: inline-block;): 
         > width and height properties are respected
         > padding, margin, and border will cause other elements to be pushed away from the box
         > does NOT break onto a new line
@@ -45,6 +46,17 @@
 # Inner display type: dictates how elements inside that box are laid out
     - block and inline layout, and normal flow (how elements behave without any CSS changes) by default
     - can change inner display type to flex -> display: flex; (https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+    
+# how elements are structured individually by their display type:
+    - block-level element's content fills the available inline space of the parent element containing it, growing along the block dimension to accommodate its content
+    - size of inline-level elements is just the size of their content
+
+# normal flow: the way a webpage's elements lay themselves out if you haven't changed their layout already through CSS declarations
+    - block-level elements are laid out in the block flow direction, which is based on the parent's writing mode
+        > each element will appear ion a new line below the last one
+    - inline-level elements will occupy the same line (adjacent to existing content, if any) until the line is occupied, whereby the content will wrap around to a new line   
+
+
 
 # Parts of a box:
     - content box: The area where your content is displayed; size it using properties like inline-size and block-size or width and height (equivalent to each other).
