@@ -1,42 +1,54 @@
 body {
     font-family: "Bebas Neue", Times, serif;
     background-color: rgb(255, 255, 255);
-    width: fit-content;
 }
 
 .header-container {
     text-align: center;
     background-color: azure;
-    padding-bottom: 5px;
     border: 3px black solid;
+    padding-bottom: 20px;
 }
 
-h1 {
-    font-size: 50px;
+.header-text {
+    font-size: 4vw;
+    display: inline;
+}
+
+.header {
     background-color: black;
     color:rgb(255, 255, 255);
-    width: 100%;
-    height: auto;
-    padding-top: 10px;
+    white-space: pre-wrap;
+    padding-top: 0.5vw;
 }
 
 .recipes {
     background-color:azure;
-    font-size: 33px;
-    font-weight: bold;
-    padding: 20px;
-    margin: 20px;
+    padding: 0.5vw;
     border: 3px black solid;
 }
 
+ul {
+    display: inline-block;
+    text-align: left;
+    list-style-position: inside;
+    margin-left: auto;
+    margin-right: auto
+}
+
 li {
-    /* border: 1px black dashed; */
-    margin: 20px;
-    padding: 10px;
+    margin: 0.5vw;
+    padding: 0.5vw;
+    font-size: 3vw;
+    font-weight: bold;
 }
 
 #frontpic {
     width: 75%;
     height: auto;
     border: 8px rgb(0, 0, 0) solid;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
