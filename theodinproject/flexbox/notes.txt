@@ -1,0 +1,21 @@
+# to enable flexbox model on an element and make it a flex container -> declare "display: flex;" on element
+# flex items are items nested within a flex container
+
+# 'flex' is a shorthand property for 3 other properties; i.e., it sets the values for 3 other properties simultaneously
+    - flex-grow: 1;
+    - flex-shrink: 1;
+    - flex-basis: 0;
+    - so "flex: 1" = "flex: 1 1 0;" -> 1 is applied to flex-grow value, flex-shrink and flex-basis are 1 and 0 by default
+
+# flex-grow: flex item's growth factor
+    - if all flex items have flex-grow: 1, then they will all increase in size proportionally
+
+# flex-shrink: flex item's shrink factor
+    - effective when flex items are altogether larger than their parent container (e.g. 3 div elements of size 100px in a flex container size less than 300px)
+    - flex-shrink: 1 on all items means all will shrink evenly; 0 means item will NOT shrink and >1 means it will shrink at a faster rate than normal
+
+# flex items do NOT necessarily respect given values for width
+    - if window/parent is big enough, items will grow to fit it according to specified growth factor; if too small, items will shrink to fit according to specified shrink factor
+
+# flex-basis: sets initial size of flex item
+    - setting value to auto tells item to check for width declaration; otherwise if set to 0, item will ignore declared width and everything would shrink evenly
