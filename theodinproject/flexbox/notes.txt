@@ -1,3 +1,8 @@
+# Useful flexbox cheatsheet:
+    - https://flexbox.malven.co/
+    - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    
+
 # to enable flexbox model on an element and make it a flex container -> declare "display: flex;" on element
 # flex items are items nested within a flex container
 
@@ -17,5 +22,17 @@
 # flex items do NOT necessarily respect given values for width
     - if window/parent is big enough, items will grow to fit it according to specified growth factor; if too small, items will shrink to fit according to specified shrink factor
 
-# flex-basis: sets initial size of flex item
+# flex-basis: sets initial size of flex item; defines the size of an element before remaining space is distributed.
     - setting value to auto tells item to check for width declaration; otherwise if set to 0, item will ignore declared width and everything would shrink evenly
+    - another way to think about it if flex-basis: 0 -> all flex-growing and flex-shrinking begin their calculations from the flex-item's default element height or width (0 for div) depending on whether flex-direction (main axis) is vertical or horizontal
+    - flex-basis: auto -> tells flex items to default to their given/declared height
+
+# Flex containers have 2 axes: the main axis and the cross axis
+    - property flex-direction specifies whether the main axis is horizontal (value = row) or vertical (value = column)
+    - default main axis is horizontal (flex-direction: row;)
+
+# Alignment properties: declared within flex container
+    - justify-content: aligns flex items across the main axis
+        > possible values include space-between, center
+    - align-items: aligns flex items across the cross axis
+    - gap: specifies space between flex items
