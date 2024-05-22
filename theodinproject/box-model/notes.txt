@@ -27,7 +27,7 @@
     - block (display: block;):
         > the box will break onto a new line
         > width and height properties are respected
-        > padding, margin, and border sill cause other elements to be pushed away from the box
+        > padding, margin, and border will cause other elements to be pushed away from the box
         > if width is NOT specified, box will extend in the inline direction to fill space available in its container
         > some HTML elements like <h1> and <p> use block as their outer display type by default
     - inline (display: inline;): 
