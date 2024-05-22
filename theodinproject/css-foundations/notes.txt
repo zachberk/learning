@@ -16,10 +16,10 @@ Types of selectors:
         > use # in front of ID name for proper syntax
         > same as class selectors but an element can only have 1 ID placed on it unlike classes
         > use sparingly, if at all
-    - grouping selectors: separate selectors by commas to place common style declarations on all of them at once
-    - chaining selectors: chain selectors without separation to pick specific elements that may have multiple class/attribute selectors
+    - grouping selectors (comma separating selectors; reflects "or" relationship): separate selectors by commas to place common style declarations on all of them at once
+    - chaining selectors (no space between selectors; reflects "and" relationship): chain selectors without separation to pick specific elements that may have multiple class/attribute selectors
         > generally cannot chain two type selectors together -> an element is only one type of element and there are no unique symbols to separate them
-    - descendant combinator: will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc.) that matches the previous selector
+    - descendant combinator (empty space between selectors; reflects "and" relationship with ancestral specificity): will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc.) that matches the previous selector
         > represented by a single space between selectors
 
 Properties:
@@ -56,6 +56,6 @@ The Cascade:
      > the universal selector, and combinator relationship selectors have NO specificity value (all other selectors with specificity take precedence over these)
     - specificity is taken into account only when an element has multiple, conflicting declarations targeting it
     - when there is no declaration with a selector of higher specificity, a rule with greater number of selectors of the same type will take precedence over another rule with fewer selectors of the same type
-    - inheritance: refers to certain CSS properties that, when applied, to an element, are inherited bty that element's descendants even if we don't explicitly write a rule for those descendants
+    - inheritance: refers to certain CSS properties that, when applied, to an element, are inherited by that element's descendants even if we don't explicitly write a rule for those descendants
         > rules that specifically target those descendants will override the inherited declarations
     - if every factor has been taken into account (specificity, # of selectors, inheritance) and declarations are still conflicting, then the rule declared LAST takes precedence
