@@ -31,8 +31,19 @@
     - property flex-direction specifies whether the main axis is horizontal (value = row) or vertical (value = column)
     - default main axis is horizontal (flex-direction: row;)
 
-# Alignment properties: declared within flex container
-    - justify-content: aligns flex items across the main axis
-        > possible values include space-between, center
-    - align-items: aligns flex items across the cross axis
-    - gap: specifies space between flex items
+# Alignment properties: declared within flex container (IMPORTANT)
+
+# property: justify-content
+    - aligns items across the main axis
+    - value: space-between 
+        > spaces out elements in container equally across the main axis, conserving their original size
+    - value: center
+        > places elements at the center of containger
+
+# property: align-items
+    - aligns items along the cross axis
+    - if flex direction is horizontal/row (the default), then align-items places elements vertically and vice versa.
+    - possible values include the same ones employed by justify-content
+
+# property: gap
+    - adds a specified space between flex items, similar to adding margin to the items themselves
