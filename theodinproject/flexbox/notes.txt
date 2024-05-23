@@ -47,3 +47,81 @@
 
 # property: gap
     - adds a specified space between flex items, similar to adding margin to the items themselves
+
+--------------------------------------------------------------------
+Page: https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/
+
+# CSS is comprised of different layout algorithms known as "layout modes" (e.g. flow layout, flexbox, etc.)
+    > each are designed to solve a specific problem
+# Default layout mode is Flow layout
+    > meant to create digital documents like Microsoft Word documents
+# Flexbox is about flexibility
+    > reigns supreme for dynamic, fluid UIs that arrange items in a vertical or horizontal list
+
+# flex-direction: row -> primary axis runs horizontally
+# flex-direction: column -> primary axis runs vertically
+# In Flexbox, everything is based on the primary axis (which thereby dictates what the cross axis is)
+# Children elements (within a flex container) will be positioned by default according to 2 rules:
+    1. Primary axis: children will be bunched up at the start of the container
+    2. Cross axis: children will stretch out to fill the entire container
+
+# justify-content values:
+    1. flex-start
+    2. center
+    3. flex-end
+    4. space-between
+    5. space-around
+    6. space-evenly
+
+# align-items values:
+    1. stretch
+    2. flex-start
+    3. center
+    4. flex-end
+    5. baseline
+
+# align-self property is applied to the child element, not the container
+    > changes the alignment of a specific child along the cross axis
+    > same values as align-items
+
+# there is no justify-self -> why? | further, why is it justify-content and align-items, and not justify-items, or align-content?
+    > for alignment in the cross axis, each item can do whatever it wants; there is only one element in each item's respective cross axis (if flex-wrap is not active)
+    > in the primary axis, however, we can only think about how to distribute the group; an item interacts with other items along the axis
+
+# With this in mind, here are definitions for the 4 terms:
+    1. justify: to position something along the primary axis
+    2. align: to position something along the cross axis
+    3. content: a group of stuff that can be distributed
+    4. single items that can be positioned individually
+
+# align-content does, however, exist -> involved with the flex-wrap property
+
+# In Flexbox, the width property is implemented differently -> it reflects the hypothetical size of the element when unconstrained
+
+* It is best to think of CSS as input for the various layout modes / algorithms that are included within it
+    > each property-value pair may be porcessed differently according to the layout mode specified
+
+# flex-grow specifies how the extra space is distributed when the items are smaller than their container
+    > default value is 0 -> which means that growing is optional; if we want extra space to be used, then we have to specify it to do so with a value > 0
+    > flex items will grow proportionally based on their flex-grow value
+
+# flex-shrink specifies how space is removed when the items are bigger than their container
+    > e.g. a container is shrunk by 100px; if one element has a flex-shrink value of 3 and another 1, then the 1st element will shrink by 75px while the other 25px
+    > flex-shrink: 0 -> "opt-out" of shrinking process altogether
+
+# by the nature of the two properties, either flex-grow or flex-shrink is active and not both
+
+# If flex-direction is row -> flex-basis affects width; if flex-direction is column -> flex-basis affects height 
+    > flex-basis allows us to set the hypothetical size of an element in the primary-axis direction
+
+# Flexbox algorithm refuses to shrink a child below its minimum size no matter how high flex-shrink is set to
+    > for an element containing text, the minimum width is the length of the longest unbreakable string of characters
+    > consider setting min-width to 0px to solve element overflows when reducing size of a container or when elements are bigger than the container
+
+# gap property specifies amount of space in-between each Flex child
+    > great for navigation headers
+
+# auto margins gobble up extra space and apply it to the element's margin
+
+# flex-wrap: wrap -> items won't shrink below their hypothetical size
+    > each row acts as its own mini flex container
