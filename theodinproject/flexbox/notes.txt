@@ -99,7 +99,7 @@ Page: https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/
 # In Flexbox, the width property is implemented differently -> it reflects the hypothetical size of the element when unconstrained
 
 * It is best to think of CSS as input for the various layout modes / algorithms that are included within it
-    > each property-value pair may be porcessed differently according to the layout mode specified
+    > each property-value pair may be processed differently according to the layout mode specified
 
 # flex-grow specifies how the extra space is distributed when the items are smaller than their container
     > default value is 0 -> which means that growing is optional; if we want extra space to be used, then we have to specify it to do so with a value > 0
