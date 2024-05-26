@@ -57,7 +57,7 @@ button:hover {
 .header-right {
     display: flex;
     align-items: center;
-    gap: px;
+    gap: 16px;
 }
 
 a {
