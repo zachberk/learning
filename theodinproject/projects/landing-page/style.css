@@ -10,12 +10,12 @@ body {
 }
 
 button {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 400;
     color: #f9faf8;
     background-color: #3882f6;
-    padding: 6px;
-    padding-inline: 12px;
+    padding: 8px 15px;
+    width: fit-content;
     border: none;
     border-radius: 12px; /* Rounded corners */
     cursor: pointer;
@@ -57,11 +57,11 @@ button:hover {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: px;
 }
 
 a {
-    font-size: 18px;
+    font-size: 16px;
     color: #1f2937;
     text-decoration: none;
     transition: color 0.3s ease, color 0.3s ease;
@@ -107,12 +107,6 @@ a:hover {
     color: #1f2937;
 }
 
-.section1 button {
-    flex-grow: 0;
-    flex-shrink: 0;
-    width: 85px;
-}
-
 .section1-img {
     width: 700px;
     border: none;
@@ -125,6 +119,7 @@ a:hover {
 .section2 {
     background-color: #1f2937;
     padding: 60px;
+    margin: 0;
 }
 
 .section2 .content {
@@ -151,7 +146,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 16px;
 }
 
@@ -175,10 +170,89 @@ a:hover {
 
 .section3 {
     background-color: #e5e7eb;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.section3 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%;
+    gap: 16px;
+}
+
+.section3 .quote {
+    font-size: 36px;
+    color: #1f2937;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.section3 .author {
+    font-size: 18px;
+    color: #1f2937;
+    font-weight: bold;
+    align-self: self-end;
 }
 
 /* Section 4 */
 
 .section4 {
+    background-color: #ffffff;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section4 .content {
     background-color: #3882f6;
+    width: 75%;
+    display: flex;
+    gap: 32px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 32px;
+    border-radius: 8px; /* Rounded corners */
+}
+
+.left-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    color: #f9faf8;
+}
+
+.left-text .hero {
+    font-size: 18px;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.left-text .sub {
+    font-size: 16px;
+}
+
+#right-button{
+    font-size: 14px;
+    font-weight: 400;
+    color: #f9faf8;
+    background-color: #3882f6;
+    padding: 8px 15px;
+    width: fit-content;
+    border: 2px solid #f9faf8;
+    border-radius: 12px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-wrap: nowrap;
+}
+
+#right-button:hover {
+    background-color: #6098f2;
 }
