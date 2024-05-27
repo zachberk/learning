@@ -1,0 +1,108 @@
+# Notes on running JavaScript Code
+
+> To integrate JS code internally within HTML file, write JS code within a <script>...</script> element inside of the <body>...</body> of HTML file.
+> To integrate JS code via an external script, link the script element to the path of the JS file.
+    - e.g. <script src="javascript.js"></script
+> console.log() is the command to print something to the developer console in your browser.
+    - Print variable values and/or operations on variables
+> When performing commands in console, you cannot declare (use "let") and assign a value to a variable and read its value in the same line.
+
+
+# Notes on Variables and Operators Section of Javascript Basics Module in TOP's Foundations Course
+
+Declarations and Value Assignments:
+    > Remember that every line of JS should end in a semi-colon (";") like as done when coding in C
+    > Declare variable using "let" followed by variable name.
+    > Can assign the variable a value using "=" operator; can do so in the same line
+        - e.g. let message = 'Hello';
+        - can do multiple declarations, preferably in multiline format. e.g.,
+            let user = 'John',
+                age = 25,
+                message = 'Hello';
+    > Can change value of variable as many times as you want
+        - note: declaring a variable is different from assigning a variable a value; using "let" declares while using the "=" assigns a value
+        - can only declare a variable once
+    > Can copy data from one variable into another
+    > function/command "alert shows the variable's content
+        - e.g. alert(message);
+
+Variable Naming:
+    > The name must only contain letters, digits, or the symbols $ and _
+    > Name is case-sensitive
+    > The first character must not be a digit
+    > When name contains multiple words, camelCase is commonly used
+        - i.e., words go one after another, each word except the first starting with a capital letters
+        - e.g., myVeryLongName
+    > "Reserved names" cannot be used as variable names because they are used by JS itself
+        - e.g., let, class, return, and function
+    > Strive for human-readable, maximally descriptive and concise names
+    > Stay away from abbreviations or short names like a, b, and c
+
+Constants:
+    > To declare a constant (unchanging) variable, use const instead of let
+    > It's common practice to use constants as aliases for difficult-to-remember values that are known before execution, and to name them using capital letters and underscores
+        - e.g., const COLOR-RED = "#F00";
+    > Some constants are calculated in run-time (during the execution), but do not change after their initial assignment; in this case, it is common practice to use camelCase
+        - e.g., const pageLoadTime = ... ;
+
+Numbers and Arithmetic Operators:
+    > JavaScript has two number types—namely, Number and BigInt
+        - Type Number elements cover both integers and floating point Numbers
+    > You can apply methods to Number types, e.g, toFixed(n) to round a float to n number of decimal places
+        - Given the type Number variable myFloat, you can round it to the nearest 2 decimal places with myFloat.toFixed(2)
+    > Can convert a string of containing a number (usually from a form input field whose input type is text) using the constructor Number()
+    > Arithmetic operators: +, -, *, /, % (modulo), ** (exponent)
+    > Operator precedence applies to arithmetic operations; i.e., traditional math PEMDAS precedence
+    > Addition with a string (and a number) outputs a string; "" + 1 = "1"
+        - is effectively a concatenation
+    > Subtraction with a string outputs a number; "" converts to 0
+    > null converts to 0 during arithmetic operations
+    > undefined converts to NaN during arithmetic operations, outputting NaN for the whole expression when evaluated
+    
+Increment / Decrement Operators:
+    > Increment: ++
+    > Decrement: --
+    > Applied to variables and assign a new incremented/decremented value to the variable
+    > Prefix form returns the new value while postfix form returns the old value 
+        - e.g. let a = 1, b = 1;
+                let c = ++a; c = 2, a = 2
+                let d = b++; d = 1, b = 2
+
+
+Assignment Operators:
+    > Include =, +=, -=, *=, and /=
+    > It is said that variables can be "modified in-place" using the +=, -=, *=, and /= operators
+
+Unary + Operator: 
+    > Unary + converts a non-number type to a number (i.e., behaves the same way that Number() constructor does but is shorter)
+        - e.g., alert(+true) => 1 and alert(+"") => 0
+    > In contrast, the binary + adds numbers or concatenates strings
+    > unary +/- take precedence over exponentiation
+
+Value Assignment:
+    > It is possible to chain assignments
+        - e.g., a = b = c = 2 + 2 would give a, b, and c all the value of 4
+
+Comparison Operators:
+    1. === (strict equality) tests whether the left and right values are identical to one another (i.e., evaluate to equal values)
+    2. !== (strict-non-equality) tests whether the left and right values are not identical to one another (i.e., do NOT evaluate to equal values)
+    3. < (less than) tests whether the left value is less than the right one
+    4. > (greater than) tests whether the left value is greater than the right one
+    5. <= (less than or equal to) tests whether the left value is smaller than or equal to the right one
+    6. >= (greater than or equal to) tests whether the left value is greater than or equal to the right one
+
+Bitwise Operators:
+    > AND (&)
+    > OR (|)
+    > XOR (^)
+    > NOT (~)
+    > LEFT SHIFT (<<)
+    > RIGHT SHIFT (>>)
+    > ZERO-FILL RIGHT SHIFT (>>>)
+
+Comma:
+
+    > The comma (,) allows us to evaluate several expressions divided by that comma.
+    > Each of the expressions are evaluated but only the result of the last one is returned.
+        - e.g. let a = (1 + 2, 3 + 4) -> alert (a) => 7 (the result of 3 + 4)
+ 
