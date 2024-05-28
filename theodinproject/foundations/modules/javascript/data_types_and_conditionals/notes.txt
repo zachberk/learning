@@ -1,0 +1,250 @@
+# Notes on Data types
+
+    > JavaScript is "dynamically-typed"; i.e., there exists data types but variables are not bound to any of them.
+        - a variable can be assigned a string type value and then reassigned another type value
+
+Number:
+    > Include integer and floating point numbers
+    > Special numeric values include Infinity, -Infinity, and NaN 
+        - Infinity results from division by 0
+        - NaN represents a computational error; it is a result of an incorrect or undefined mathematica loperation
+            -- e.g. alert ("not a number" / 2) => NaN
+            -- NaN is "sticky"; i.e., any further mathematical operation on NaN returns NaN (e.g., alert (3 * NaN) => NaN)
+                --- one exception is that NaN ** 0 => 1
+        
+BigInt:
+    >  Number type cannot safely represent integer values larger than (2^53 - 1), or less than -(2^53 - 1)
+        - BigInt type covers for this gap
+        - Number type stores "approximate values" for numbers computed beyond this safe range
+    > A BigInt value is created by appending n to the end of an integer
+
+String:
+    > Must be surrounded by quotes, either double or single quotes are fine and both are known as "simple" quotes
+    > Using backticks (`...`) as quotes produce "extended functionality" quotes
+        - these allow us to embed variables and expressions into a string by wrapping them in ${..}, for example"
+            let name = "John":
+            alert (`Hello, ${name}!'); => Hello, John!
+            alert (`the result is ${1 + 2}`); => the result is 3
+    > Includes the empty string ""
+
+Boolean (logical type): 
+    > true / false
+    > also come as a result of comparisons; e.g., 4 > 1 is true and 4 < 1 is false
+
+The "null" value:
+    > The special null value doesn't belong to any of the types described above; it forms its own type which only contains the null value
+
+The "undefined" value:
+    > The special undefined value also makes its own type containing only the undefined type
+    > It means "value is not assigned"; if a variable is declared but not assigned then its value is undefined
+    > You can technically assigned undefined to a variable but that is uncommon; one typically assigns the null value to assign an "empty" or "unknown" value
+
+Objects and Symbols:
+    > The object type is special and non-primitive because it can store collections of data and more complex entities
+        - all other types are called "primitive" because their values can contain only a single thing
+    > The symbol type is used to create unique identifiers for Objects
+    > Math is a built-in object that provides mathematical operations
+    > 
+
+typeof Operator:
+    > typeof operator returns a string containing the type of the operand
+        - e.g., typeof 0; => "number"
+                typeof 10n; => "bigint"
+                typeof alert; => "function"
+                typeof Math; => "object"
+    > typeof null actually returns object when it should be null; this is a known error coming back from the early days of JavaScript
+    > Functions belong to the object type but typeof treats them differently, returning "function"
+
+-------------------
+# Notes on Strings
+
+    > When writing a string, you need to surround the value with quotes 
+        - any text without quotes around it is interpreted as a variable name, property name, reserved word, or similar
+    > Strings declared using backticks (`) are called a "template literal"
+        - you can embed JavaScript in them
+        - you can declare template literals over multiple lines
+
+Embedding JavaScript:
+    > Inside a template literal, you can wrap JavaScript variables or expressions inside "${...}", and the result will be included in the string
+        - e.g., const name = "Chris";
+                const greeting = `Hello, ${name}`;
+                console.log(greeting); => "Hello, Chris"
+        - e.g., const one = "Hello, ";
+                const two = "how are you?";
+                const joined = `${one}${two}`;
+                console.log(joined); => "Hello, how are you?"
+
+Concatenation using "+": 
+    > You can use "${}" only with template literals, not normal strings.
+    > You can concatenate normal strings using the + operator. However, template literals usually give more readable code.
+        - e.g., const greeting = "Hello";
+                const name = "Chris";
+                console.log(greeting + ", " + name); => "Hello, Chris"
+                console.log(`${greeting}, ${name}`); => "Hello, Chris"
+
+Including Expressions in Strings:
+    > You can include expressions as well as variables in template literals
+        - e.g., const song = "Fight the Youth";
+                const score = 9;
+                const highestScore = 10;
+                const output = `I like the song ${song}. I gave it a score of ${(score / highestScore) * 100}%.`;
+                console.log(output); => "I like the song Fight the Youth. I gave it a score of 90%."
+
+Multiline Strings:
+    > Template literals reflect the line breaks in the source code while normal strings require the line break character "\n"
+        - e.g., const newline = `One day you finally knew
+                what you had to do, and began,`;
+                console.log(newline); => 
+                                        One day you finally knew
+                                        what you had to do, and began,
+        - e.g., const newline = "One day you finally knew\nwhat you had to do, and began,";
+                console.log(newline); => 
+                                        One day you finally knew
+                                        what you had to do, and began,
+
+Including quotes in strings:
+    > One option: use other quote character to declare the string
+        - e.g., const goodQuotes1 = 'She said "I think so!"';
+                const goodQuotes2 = `She said "I'm not going in there!"`;
+    > Another option: escape the problem quotation mark by putting a backslash just before the character
+        - e.g., const bigmouth = 'I\'ve got no right to take my place…';
+                const goodQuote = "I'm Zach, and I once said, \"stay relentless.\"";
+
+Numbers vs. strings:
+    > Concatenating a string and number results in a string containing that number
+    > Use Number() and String() constructors to convert anything passed into them into a number or string respectively
+
+--------------------------
+# Notes on String Methods
+
+> https://www.w3schools.com/js/js_string_methods.asp
+
+--------------------------
+# Notes on Conditionals
+
+Special things of note:
+    > Strict equality operator — i.e., === —  checks equality without type conversion, unlike regular equality operator — i.e., ==
+        - e.g., alert (0 == false); => true
+                alert (0 === false); => false, because the types are different 
+    > There is also a "strict non-equality" operator !== analogous !=
+    > null == undefined is true, and null === undefined is false
+    > null > 0 and nul == 0 are false, but null >= 0 is true; this is because comparisons convert null to 0 while equality checks do not
+
+Avoid problems by...:
+    > Treat any comparison with undefined/null except the strict equality === with exceptional care.
+    > Don’t use comparisons >= > < <= with a variable which may be null/undefined, unless you’re really sure of what you’re doing. If a variable can have these values, check for them separately.
+
+---------------------------
+# Notes on Logical Operators: https://javascript.info/logical-operators
+
+OR "||" :
+    > Truth Table: 
+    alert( true || true );   // true
+    alert( false || true );  // true
+    alert( true || false );  // true
+    alert( false || false ); // false
+
+    > 1 || 0 works just like true || false
+    > OR "||" finds the first truthy value; i.e., a chain of OR || returns the first truthy value or the last one if no truthy value is Foundations
+        - e.g., let result = value1 || value2 || value3; result is value2 if value1 is not truthy and value 2 is, and result is value3 if all values are false
+    > This enables 2 things:
+        1. Getting the first truthy value from a list of variables or expressions
+        2. Short-circuit evaluation: first true value in a chain stops evaluation of subsequent variables or expressions
+
+AND "&&" : 
+    > Truth Table:
+    alert( true && true );   // true
+    alert( false && true );  // false
+    alert( true && false );  // false
+    alert( false && false ); // false
+    > In a chain of variables or expressions, AND "&&" returns the first falsy value or the last value if none were found
+    > For readability purposes, don't replace if with || or && even if it can be done
+
+NOT "!" :
+    > ! operator accepts a single argument and does the following:
+        1. converts the operand to boolean type: true/false
+        2. returns the inverse value
+    > "!!" is sometimes used to convert a value to boolean type
+        - though there also exists the Boolean() constructor
+
+------------------
+# Notes on if... else and switch statements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals
+
+Basic if... else syntax:
+    if (condition) {
+  /* code to run if condition is true */
+} else {
+  /* run some other code instead */
+}
+
+    > else if () {...}  allows extra choices/outcomes to an if... else statement
+    > else {...} acts as a last resort outcome when no previous scenario was methods
+
+- - - - - - - - - - - -
+
+Basic switch syntax: 
+    switch (expression) {
+  case choice1:
+    // run this code
+    break;
+
+  case choice2:
+    // run this code instead
+    break;
+
+  // include as many cases as you like
+
+  default:
+    // actually, just run this code
+    break;
+}
+
+- - - - - - - - - - - -
+
+Ternary or conditional operator (?) :
+
+    > basic syntax: condition ? if condition = true, run this code : if not, run this code instead
+    > e.g.,const greeting = isBirthday
+                                        ? "Happy birthday Mrs. Smith — we hope you have a great day!"
+                                        : "Good morning Mrs. Smith.";
+        - greeting is one of two possible strings depending on whether isBirthday is true or false
+    > Can have multiple ? operators, paralleling another else if () {...} block
+
+- - - - - - - - - - - -
+
+Extra: https://javascript.info/ifelse
+    > in <script>...</script> element (JS code within HTML file, i.e., its body), you can request for user input via the prompt() function
+        - the prompt() function takes two arguments:
+            1. text prompt that will be shown to user
+            2. the type of the input that the user must enter
+
+---------------------------
+# Notes on switch statements: https://javascript.info/switch
+
+Basic Structure and Flow:
+    > If the equality is found, switch starts to execute the code starting from the corresponding case, until the nearest break (or until the end of switch).
+    > If no case is matched then the default code is executed (if it exists).
+
+Grouping of "case":
+    > Several variants of case which share the same code can be grouped
+    > e.g.:
+    let a = 3;
+
+    switch (a) {
+    case 4:
+        alert('Right!');
+        break;
+
+    case 3: // (*) grouped two cases
+    case 5:
+        alert('Wrong!');
+        alert("Why don't you take a math class?");
+        break;
+
+    default:
+        alert('The result is strange. Really.');
+    }
+
+Type matters:
+    > prompt() function outputs a string - i.e., the user input
+    > as such, the arguments of cases should be strings even if we expect the user to input a number — the output of prompt, in this case, is just a string containing a number
