@@ -1,0 +1,7 @@
+# Notes on JavaScript Developer Tools Module
+
+--- Debug JavaScript ---
+
+> To open devtools on Mac, press command-option-JavaScript
+
+> There's a number of different types of breakpoints that can be utilized in the devtools platform -> pick and choose what suits the bug the best!
