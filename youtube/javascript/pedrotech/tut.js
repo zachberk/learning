@@ -1,11 +1,11 @@
 // All The JavaScript You Need To Know For React (Part 1): https://www.youtube.com/watch?v=m55PTVUrlnA
     // Arrow function:
         // without arrow function:
-        export default function DoSomething() {
+        function DoSomething() {
             // code
         }
         // with arrow function:
-        export const DoSomething = () => {
+        const DoSomething = () => {
             return <div> </div>
         }
 
