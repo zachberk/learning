@@ -60,7 +60,22 @@
     greet('John', sayGoodbye);
 
 // Asynchronous JavaScript: https://www.youtube.com/watch?v=PgZ9npYJZzU
+const event = new Promise((resolve, reject) => {
+    let name = "Pedro";
+    if (name == "Pedro") {
+        resolve(name);
+    } else {
+        reject(`The name was not Pedro, it was ${name}!`);
+    }
+});
 
+event
+    .then((name) => {
+        console.log(name);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 
 // All The JavaScript You Need To Know For React (Part 2): https://www.youtube.com/watch?v=ACaT1Gfhe6I
