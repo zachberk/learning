@@ -2,7 +2,7 @@
 
 > To integrate JS code internally within HTML file, write JS code within a <script>...</script> element inside of the <body>...</body> of HTML file.
 > To integrate JS code via an external script, link the script element to the path of the JS file.
-    - e.g. <script src="javascript.js"></script
+    - e.g. <script src="javascript.js"></script>
 > console.log() is the command to print something to the developer console in your browser.
     - Print variable values and/or operations on variables
 > When performing commands in console, you cannot declare (use "let") and assign a value to a variable and read its value in the same line.
@@ -23,7 +23,7 @@ Declarations and Value Assignments:
         - note: declaring a variable is different from assigning a variable a value; using "let" declares while using the "=" assigns a value
         - can only declare a variable once
     > Can copy data from one variable into another
-    > function/command "alert shows the variable's content
+    > function/command "alert" shows the variable's content
         - e.g. alert(message);
 
 Variable Naming:
@@ -41,7 +41,7 @@ Variable Naming:
 Constants:
     > To declare a constant (unchanging) variable, use const instead of let
     > It's common practice to use constants as aliases for difficult-to-remember values that are known before execution, and to name them using capital letters and underscores
-        - e.g., const COLOR-RED = "#F00";
+        - e.g., const COLOR_RED = "#F00";
     > Some constants are calculated in run-time (during the execution), but do not change after their initial assignment; in this case, it is common practice to use camelCase
         - e.g., const pageLoadTime = ... ;
 
