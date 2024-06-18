@@ -180,3 +180,6 @@ Asynchronous JavaScript
     > Asynchronous means that the JS engine can execute other tasks while waiting for another task to be completed 
         - e.g. JS engine can request for data from a remote server, display a spinner, and, when the data is available, display it on the webpage
         - this is done by using an "event loop"
+
+--------------------------------------------------------------------------------
+
