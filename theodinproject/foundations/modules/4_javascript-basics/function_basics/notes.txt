@@ -1,6 +1,6 @@
 # Notes on Function Basics Module
 
-> declare and implement a function; e.g.
+    > declare and implement a function; e.g.
 
     function sum(param1, param2) {
         return param1 + param2;
@@ -8,7 +8,49 @@
 
     sum(1, 2);
 
-> the objects inside the parentheses right after the function name are called parameters or arguments; they can be used within the function implementation in whatever way
+    > the objects inside the parentheses right after the function name are called parameters or arguments; they can be used within the function implementation in whatever way
 
 
+--- MDN JS Functions --- (https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions)
 
+    > functions allow you to store a piece of code that does a single task inside a defined block, and can be called whenever needed using a single command
+    > JS has many built-in functions
+    > some built-in browser functions are NOT part of core JS language; browser APIs build on top of the default JS language to provide even more functionality
+
+Built-in Objects (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+    > "global objects" or "standard built-in objects" = objects in the global scope
+    > the "global object" can be accessed using the "this" operator
+        - the "global scope" consists of properties of the global object, including inherited properties, if any
+    
+
+    Standard objects by category
+        > Value properties: return a simple value; have no properties or Methods
+            - e.g. globalThis, Infinity, NaN, undefined
+        > Function properties: global functions—called globally rather than on one object—directly return their results to the caller
+            - e.g. eval(), isFinite(), isNaN(), etc.
+        > Fundamental objects: represent fundamental language constructs
+            - e.g. Object, Function, Boolean, Symbol
+        > Error objects: special type of fundamental object
+            - e.g. Error, AggregateError, EvalError, etc.
+        > Numbers and dates: base objects representing numbers, dates, and mathematical calculations
+            - e.g. Number, BigInt, Math, dates
+        > Text processing: represent strings and support manipulating them
+            - e.g. String, RegExp
+        > Indexed collections: represent collections of data which are ordered by an index value
+            - e.g. Array, Int8Array, Uint8Array, etc.
+        > Keyed collections: represent collections which use keys
+            - e.g. Map, Set, WeakMap, WeakSet, etc.
+        > Structured data: represent and interact with structured data buffers and data coded using JavaScript Object Notation (JSON)
+            - e.g. ArrayBuffer, SharedArrayBuffer, DataView, etc.
+        > Managing memory: interact with garbage collection mechanism
+            - e.g. WeakRef, FinalizationRegistry
+        > Control abstraction objects: help structure code, especially async code
+            - e.g. Iterator, AsyncIterator, Promise, GeneratorFunction, etc.
+        > Reflection
+            - e.g. Reflect, Proxy
+        > Internationalization
+            - e.g. Intl, Intl.Collator
+            
+
+Functions vs. Methods 
+    > 
