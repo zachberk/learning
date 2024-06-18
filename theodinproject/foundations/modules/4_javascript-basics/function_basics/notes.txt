@@ -157,3 +157,26 @@ Summary
 
 --------------------------------------------------------------------------------
 
+--- JS Call Stack --- (https://www.javascripttutorial.net/javascript-call-stack/)
+
+> JS engine uses a call stack to manage execution contexts:
+    1. global execution context: always created and pushed on top of stack when a script is run 
+        - denoted by main() or global()
+        - by nature is always the first context put on stack, so at the bottom
+    2. function execution contexts: created and pushed on top of stack whenever a function is called
+        - taken out of stack once function returns/finishes
+
+> works on the last-in-first-out (LIFO) principle
+
+> script stops when call stack is empty; i.e., when global execution context is popped off
+
+Stack Overflow
+    > call stack has a fixed size, depending on implementation of web browser or Node.JS
+    > if number of executions/contexts exceeds the size of stack, a stack overflow error will occur
+        - e.g. a recursive function with no exit condition
+
+Asynchronous JavaScript
+    > JS engine only has one call stack, so it can only do one thing at a time; it executes code from top to bottom, line by line => thus, it is "synchronous"
+    > Asynchronous means that the JS engine can execute other tasks while waiting for another task to be completed 
+        - e.g. JS engine can request for data from a remote server, display a spinner, and, when the data is available, display it on the webpage
+        - this is done by using an "event loop"
