@@ -1,0 +1,14 @@
+# Notes on Function Basics Module
+
+> declare and implement a function; e.g.
+
+    function sum(param1, param2) {
+        return param1 + param2;
+    }
+
+    sum(1, 2);
+
+> the objects inside the parentheses right after the function name are called parameters or arguments; they can be used within the function implementation in whatever way
+
+
+
