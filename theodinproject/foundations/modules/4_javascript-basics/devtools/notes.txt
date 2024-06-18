@@ -5,3 +5,26 @@
 > To open devtools on Mac, press command-option-JavaScript
 
 > There's a number of different types of breakpoints that can be utilized in the devtools platform -> pick and choose what suits the bug the best!
+
+
+--- Chrome DevTools Console Overview ---
+
+
+Three Levels of logged messages
+1. console.log()
+2. console.warn()
+3. console.error()
+
+> Can filter the console by types of messages 
+    - Use filter dropdown or filter sidebar
+
+> console.clear() to clear the console or use the button on console interface
+
+> console.table([array_name]) logs an array of objects, [array_name], as a table
+> console.log(document.xxx) to log an (html) element of the document, xxx, as JS
+> console.group() to start a group messages
+    - use console.groupEnd() to end a message group
+
+> console.count() and console.countReset() to track/reset number of times a function has been called
+> console.trace()
+> console.time() and console.timeEnd()
