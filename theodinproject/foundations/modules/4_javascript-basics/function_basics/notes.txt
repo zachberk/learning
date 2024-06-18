@@ -112,4 +112,10 @@ addEventListener Method:
             - If useCapture is true, the event handler is executed during the capturing phase.
             - If useCapture is false (default), the event handler is executed during the bubbling phase.
 
+Scope
+    > When you create a function, the variables and other things defined in the function are inside their own separate scope
+    > the top-level outside all functions is called the global scope
+        - values defined in the global scope can be accessed anywhere in the code
+    > if you call in two external JS files that declare a function or variable (or constant) with the same name, the function of the JS file called first will be performed and an error will occur with regard to the declaration of the same-name variable
 
+--------------------
