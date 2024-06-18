@@ -17,40 +17,99 @@
     > JS has many built-in functions
     > some built-in browser functions are NOT part of core JS language; browser APIs build on top of the default JS language to provide even more functionality
 
-Built-in Objects (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
-    > "global objects" or "standard built-in objects" = objects in the global scope
-    > the "global object" can be accessed using the "this" operator
-        - the "global scope" consists of properties of the global object, including inherited properties, if any
-    
+    <<< Built-in Objects >>> (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+        > "global objects" or "standard built-in objects" = objects in the global scope
+        > the "global object" can be accessed using the "this" operator
+            - the "global scope" consists of properties of the global object, including inherited properties, if any
+        
 
-    Standard objects by category
-        > Value properties: return a simple value; have no properties or Methods
-            - e.g. globalThis, Infinity, NaN, undefined
-        > Function properties: global functions—called globally rather than on one object—directly return their results to the caller
-            - e.g. eval(), isFinite(), isNaN(), etc.
-        > Fundamental objects: represent fundamental language constructs
-            - e.g. Object, Function, Boolean, Symbol
-        > Error objects: special type of fundamental object
-            - e.g. Error, AggregateError, EvalError, etc.
-        > Numbers and dates: base objects representing numbers, dates, and mathematical calculations
-            - e.g. Number, BigInt, Math, dates
-        > Text processing: represent strings and support manipulating them
-            - e.g. String, RegExp
-        > Indexed collections: represent collections of data which are ordered by an index value
-            - e.g. Array, Int8Array, Uint8Array, etc.
-        > Keyed collections: represent collections which use keys
-            - e.g. Map, Set, WeakMap, WeakSet, etc.
-        > Structured data: represent and interact with structured data buffers and data coded using JavaScript Object Notation (JSON)
-            - e.g. ArrayBuffer, SharedArrayBuffer, DataView, etc.
-        > Managing memory: interact with garbage collection mechanism
-            - e.g. WeakRef, FinalizationRegistry
-        > Control abstraction objects: help structure code, especially async code
-            - e.g. Iterator, AsyncIterator, Promise, GeneratorFunction, etc.
-        > Reflection
-            - e.g. Reflect, Proxy
-        > Internationalization
-            - e.g. Intl, Intl.Collator
+        Standard objects by category
+            > Value properties: return a simple value; have no properties or Methods
+                - e.g. globalThis, Infinity, NaN, undefined
+            > Function properties: global functions—called globally rather than on one object—directly return their results to the caller
+                - e.g. eval(), isFinite(), isNaN(), etc.
+            > Fundamental objects: represent fundamental language constructs
+                - e.g. Object, Function, Boolean, Symbol
+            > Error objects: special type of fundamental object
+                - e.g. Error, AggregateError, EvalError, etc.
+            > Numbers and dates: base objects representing numbers, dates, and mathematical calculations
+                - e.g. Number, BigInt, Math, dates
+            > Text processing: represent strings and support manipulating them
+                - e.g. String, RegExp
+            > Indexed collections: represent collections of data which are ordered by an index value
+                - e.g. Array, Int8Array, Uint8Array, etc.
+            > Keyed collections: represent collections which use keys
+                - e.g. Map, Set, WeakMap, WeakSet, etc.
+            > Structured data: represent and interact with structured data buffers and data coded using JavaScript Object Notation (JSON)
+                - e.g. ArrayBuffer, SharedArrayBuffer, DataView, etc.
+            > Managing memory: interact with garbage collection mechanism
+                - e.g. WeakRef, FinalizationRegistry
+            > Control abstraction objects: help structure code, especially async code
+                - e.g. Iterator, AsyncIterator, Promise, GeneratorFunction, etc.
+            > Reflection
+                - e.g. Reflect, Proxy
+            > Internationalization
+                - e.g. Intl, Intl.Collator
             
 
 Functions vs. Methods 
-    > 
+    > Functions that are part of objects are called Methods
+
+Function parameters
+    > Functions may or may not need parameters passed into them to be invoked
+    > There are optional parameters; if not given, some default behavior is performed by the function
+    > to specify a default parameter in a user-written function, add and "=" after the name of the parameter, followed by the default value
+
+Anonymous functions
+    > Can create functions without a name => anonymous function
+        - e.g. (function () {
+                    alert("Hello");
+                });
+        - often used as a parameter for another function; in this case, an anonymous function is known as a function expression
+            e.g. No anonymous function:
+                    function logKey(event) {
+                        console.log(`You pressed "${event.key}".`);
+                    }
+
+                    textBox.addEventListener("keydown", logKey);
+
+                With anonymous function:
+                    textBox.addEventListener("keydown", function (event) {
+                        console.log(`You pressed "${event.key}".`);
+                    });
+
+Arrow functions
+    > If passing an anonymous function as a function parameter (function expression), you can use an alternative form called an arrow function
+        - in the above example, instead of "function(event)", you can write "(event) =>"; e.g.
+            textBox.addEventListener("keydown", (event) => {
+                console.log(`You pressed "${event.key}".`);
+            });
+
+            If the function only takes one parameter, you can omit the parentheses around the parameter:
+            textBox.addEventListener("keydown", event => {
+                console.log(`You pressed "${event.key}".`);
+            });
+
+            If the function only has one line, you can omit the brackets:
+            textBox.addEventListener("keydown", (event) =>
+                console.log(`You pressed "${event.key}".`),
+            );
+
+addEventListener Method:
+    > Syntax: element.addEventListener(event, function, useCapture);
+    > element needs to be JS object
+        - to declare a JS element using an element in the (HTML) document, use the "querySelector" method on "document; e.g.
+            const button = document.querySelector('button');
+            button.addEventListener('click', event => console.log(`Clicked element: ${event.target}`));
+    > Parameters 
+        1. event: a string that specifies which event to listen for
+            - e.g. "click", "mouseover", "keydown"
+        2. event handler function: function that gets executed when the specified event occurs
+            - It can be an anonymous function, an arrow function, or a reference to a named function.
+            - Inside the event handler function, you can use the "event" object to get more information about the event, such as the target element, mouse coordinates, key codes, etc.
+        3. useCapture: an optional parameter that determines the phase in which the event is handled
+            - Events propagate in two phases: capturing and bubbling.
+            - If useCapture is true, the event handler is executed during the capturing phase.
+            - If useCapture is false (default), the event handler is executed during the bubbling phase.
+
+
