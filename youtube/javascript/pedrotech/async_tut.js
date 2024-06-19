@@ -1,20 +1,12 @@
 // Asynchronous JavaScript: https://www.youtube.com/watch?v=PgZ9npYJZzU
-const event = new Promise((resolve, reject) => {
-    let name = "John";
-    if (name == "Pedro") {
-        resolve(name);
-    } else {
-        reject(`The name was not Pedro, it was ${name}!`);
-    }
-});
+const axios = require("axios");
 
-event
-    .then((name) => {
-        console.log(name);
+const data = axios("https://cat-fact.herokuapp.com/fact");
+
+data
+    .then((res) => {
+        console.log(res.data);
     })
-    .catch((err) => {
-        console.log(err);
-    })
-    .finally (() => {
-        console.log('Promise settled')
+    .catch ((err) => {
+        console.log(err)
     });
