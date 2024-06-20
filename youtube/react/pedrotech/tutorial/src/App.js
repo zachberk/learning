@@ -10,7 +10,7 @@ function App() {
         (planet, key) =>
           planet.isGasPlanet && (
             <h2>
-              <Planet name={planet.name} key={key} /> 
+              <Planet name={planet.name} key={key} />
             </h2>
           )
       )}
