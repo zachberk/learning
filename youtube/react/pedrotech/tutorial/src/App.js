@@ -6,13 +6,14 @@ import { planets } from "./planets.js"; // list of planets
 function App() {
   return (
     <div className="App">
-      <h2>
-        {planets
-          .filter((planet) => planet.isGasPlanet)
-          .map((gasPlanet, key) => {
-            return <Planet name={gasPlanet.name} key={key} />;
-          })}
-      </h2>
+      {planets.map(
+        (planet, key) =>
+          planet.isGasPlanet && (
+            <h2>
+              <Planet name={planet.name} key={key} /> 
+            </h2>
+          )
+      )}
     </div>
   );
 }
