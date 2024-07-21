@@ -1,0 +1,11 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the children horizontally in the container */
+  justify-content: center; /* This centers the children vertically in the container */
+  gap: 10px; /* This adds some space between each form element */
+}
+
+.validation-error {
+    color: red;
+}
